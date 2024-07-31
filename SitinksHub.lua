@@ -19,6 +19,11 @@ local plr = game.Players.LocalPlayer
 
 if PlaceId == 2753915549 or PlaceId == 4442272183 or PlaceId == 7449423635 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/MinhNghia2k11/Main/main/Main-BF"))()
+    Hookfunction = hookfunction or hookfunc
+    local Death = require(game.ReplicatedStorage.Effect.Container:WaitForChild("Death"))
+    local Respawn = require(game.ReplicatedStorage.Effect.Container:WaitForChild("Respawn"))
+    Hookfunction(Death, function() return nil end)
+    Hookfunction(Respawn, function() return nil end)
 else
     plr:Kick("Đéo support Cook!!")
 end
